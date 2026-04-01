@@ -70,7 +70,7 @@ export function Hero() {
             <div className="flex-1 bg-background p-4 pt-10">
               <div className="h-40 bg-gradient-to-br from-primary/40 to-secondary/40 rounded-2xl mb-4 relative overflow-hidden border border-white/10">
                 <div className="absolute bottom-3 left-3">
-                  <div className="text-xs font-bold bg-black/50 px-2 py-1 rounded backdrop-blur-sm inline-block mb-1">BGMI SHOWDOWN</div>
+                  <div className="text-xs font-bold bg-black/50 px-2 py-1 rounded backdrop-blur-sm inline-block mb-1">VALORANT SHOWDOWN</div>
                   <div className="text-[10px] text-accent font-bold">● LIVE 24,501 Watching</div>
                 </div>
               </div>

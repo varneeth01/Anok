@@ -51,7 +51,7 @@ export function LiveArena() {
                   <p className="text-foreground/50 text-sm font-medium">Sponsored by <span className="text-secondary font-bold">Anoiak</span></p>
                 </div>
                 <div className="text-right">
-                  <div className="text-sm text-foreground/50 mb-2">Join on Discord</div>
+                  <div className="text-sm text-foreground/50 mb-2"></div>
                   <a
                     href="https://discord.gg/eg7A4hVPEu"
                     target="_blank"
