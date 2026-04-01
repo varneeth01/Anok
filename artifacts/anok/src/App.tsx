@@ -19,8 +19,11 @@ const queryClient = new QueryClient();
 function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
-      <Navbar />
-      <main>
+
+      <header role="banner">
+        <Navbar />
+      </header>
+      <main id="main-content" role="main">
         <Hero />
         <ForEveryGamer />
         <WhyAnok />

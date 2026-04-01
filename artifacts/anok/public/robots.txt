@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Block any build/config artifacts if they ever get exposed
+Disallow: /src/
+Disallow: /.env
+Disallow: /node_modules/
+
+# Sitemaps
+Sitemap: https://anokesports.com/sitemap.xml
+
+# Crawl rate hint (1 request per second)
+Crawl-delay: 1
+
