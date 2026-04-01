@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Menu } from "lucide-react";
-import anokLogo from "artifacts/anok/src/assets/transparent-imadge.svg";
+import anokLogo from "../assets/transparent-imadge.svg";
 
 const DISCORD_URL = "https://discord.gg/eg7A4hVPEu";
 
