@@ -9,10 +9,10 @@ export function Footer() {
         </div>
 
         <div className="flex gap-6">
-          <a href="#" className="text-foreground/50 hover:text-white hover:scale-110 transition-all">
+          <a href="https://discord.gg/eg7A4hVPEu" className="text-foreground/50 hover:text-white hover:scale-110 transition-all">
             <FaDiscord className="w-6 h-6" />
           </a>
-          <a href="#" className="text-foreground/50 hover:text-white hover:scale-110 transition-all">
+          <a href="https://www.instagram.com/anokesports" className="text-foreground/50 hover:text-white hover:scale-110 transition-all">
             <FaInstagram className="w-6 h-6" />
           </a>
           <a href="#" className="text-foreground/50 hover:text-white hover:scale-110 transition-all">
@@ -21,7 +21,7 @@ export function Footer() {
           <a href="#" className="text-foreground/50 hover:text-white hover:scale-110 transition-all">
             <FaLinkedin className="w-6 h-6" />
           </a>
-          <a href="#" className="text-foreground/50 hover:text-white hover:scale-110 transition-all">
+          <a href="mailto:varneethvarma.n@gamail.com" className="text-foreground/50 hover:text-white hover:scale-110 transition-all">
             <FaEnvelope className="w-6 h-6" />
           </a>
         </div>
