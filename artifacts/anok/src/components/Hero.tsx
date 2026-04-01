@@ -3,14 +3,14 @@ import { Trophy, Gamepad2, Headphones, Crosshair, Users, ArrowUpRight } from "lu
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-24 overflow-hidden cyber-grid">
+    <section className="relative min-h-screen flex items-center pt-24 overflow-x-hidden cyber-grid">
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px]" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-[120px]" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center z-10 w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 items-center z-10 w-full py-12 lg:py-0">
         {/* LEFT COPY */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -20,39 +20,39 @@ export function Hero() {
           <div className="inline-block px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary font-bold text-xs tracking-widest mb-6 uppercase">
             Welcome to the Arena
           </div>
-          <h1 className="text-6xl sm:text-7xl lg:text-8xl font-black leading-[0.9] mb-4 text-glow-blue">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-[0.9] mb-4 text-glow-blue">
             THE FUTURE<br />
             OF <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">COMPETITIVE</span><br />
             GAMING.
           </h1>
-          <p className="text-xl sm:text-2xl font-bold text-foreground/80 mb-6 font-display tracking-wide">
+          <p className="text-base sm:text-xl font-bold text-foreground/80 mb-4 font-display tracking-wide">
             ONE PLATFORM. EVERY GAMER.
           </p>
-          <p className="text-lg text-foreground/60 max-w-lg mb-10 leading-relaxed">
+          <p className="text-base sm:text-lg text-foreground/60 max-w-lg mb-8 leading-relaxed">
             India's ultimate esports ecosystem. Compete in daily tournaments, grow your creator brand, build unstoppable teams, and dominate the leaderboards.
           </p>
           
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
             <a
               href="https://discord.gg/eg7A4hVPEu"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 rounded-full font-display font-bold text-lg bg-primary text-primary-foreground glow-blue hover:scale-105 transition-all flex items-center gap-2"
+              className="px-6 sm:px-8 py-3 sm:py-4 rounded-full font-display font-bold text-base sm:text-lg bg-primary text-primary-foreground glow-blue hover:scale-105 transition-all flex items-center justify-center gap-2"
             >
               Join Early Access <ArrowUpRight className="w-5 h-5" />
             </a>
             <a
               href="#launch"
-              className="px-8 py-4 rounded-full font-display font-bold text-lg border border-white/20 hover:bg-white/5 transition-colors"
+              className="px-6 sm:px-8 py-3 sm:py-4 rounded-full font-display font-bold text-base sm:text-lg border border-white/20 hover:bg-white/5 transition-colors text-center"
             >
               App Launching Soon
             </a>
           </div>
         </motion.div>
 
-        {/* RIGHT MOCKUP */}
+        {/* RIGHT MOCKUP — hidden on mobile, shown from lg up */}
         <motion.div 
-          className="relative h-[600px] flex items-center justify-center"
+          className="relative h-[600px] items-center justify-center hidden lg:flex"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.4 }}
@@ -126,3 +126,4 @@ export function Hero() {
     </section>
   );
 }
+
