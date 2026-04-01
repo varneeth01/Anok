@@ -4,30 +4,25 @@ import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
-// ✅ Safe PORT handling
+// ✅ Environment
 const port = Number(process.env.PORT) || 3000;
-
-// ✅ Safe BASE_PATH handling
-const basePath = process.env.BASE_PATH || "/";
-
-// ✅ Detect environment
 const isDev = process.env.NODE_ENV !== "production";
 
 export default defineConfig(async () => ({
-  base: basePath,
+  // ✅ VERY IMPORTANT → fixes /anok/ path issue
+  base: "/",
 
   plugins: [
     react(),
     tailwindcss(),
 
-    // ❌ Only load this in dev (not needed in production build)
+    // ✅ Only in development
     ...(isDev ? [runtimeErrorOverlay()] : []),
 
-    // ✅ Replit plugins only in dev
     ...(isDev && process.env.REPL_ID !== undefined
       ? [
           (await import("@replit/vite-plugin-cartographer")).cartographer({
-            root: path.resolve(import.meta.dirname, ".."),
+            root: path.resolve(__dirname, ".."),
           }),
           (await import("@replit/vite-plugin-dev-banner")).devBanner(),
         ]
@@ -36,22 +31,32 @@ export default defineConfig(async () => ({
 
   resolve: {
     alias: {
-      "@": path.resolve(import.meta.dirname, "src"),
-      "@assets": path.resolve(
-        import.meta.dirname,
-        "..",
-        "..",
-        "attached_assets"
-      ),
+      "@": path.resolve(__dirname, "src"),
+      "@assets": path.resolve(__dirname, "..", "..", "attached_assets"),
     },
     dedupe: ["react", "react-dom"],
   },
 
-  root: path.resolve(import.meta.dirname),
+  // ✅ Root of your app
+  root: path.resolve(__dirname),
 
   build: {
-    outDir: path.resolve(import.meta.dirname, "dist/public"),
+    // ✅ CRITICAL FIX → no more dist/public
+    outDir: path.resolve(__dirname, "dist"),
+
     emptyOutDir: true,
+
+    // ✅ Better production optimization
+    sourcemap: false,
+    minify: "esbuild",
+
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          react: ["react", "react-dom"],
+        },
+      },
+    },
   },
 
   server: {
